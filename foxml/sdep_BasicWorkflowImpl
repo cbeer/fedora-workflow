@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<foxml:digitalObject VERSION="1.1" PID="sdep:BasicWorkflowImpl" xmlns:foxml="info:fedora/fedora-system:def/foxml#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="info:fedora/fedora-system:def/foxml# http://www.fedora.info/definitions/1/0/foxml1-1.xsd">
+  <foxml:objectProperties>
+    <foxml:property NAME="info:fedora/fedora-system:def/model#state" VALUE="Active" />
+    <foxml:property NAME="info:fedora/fedora-system:def/model#label" VALUE="Service Deployment Object for Basic workflow" />
+    <foxml:property NAME="info:fedora/fedora-system:def/model#ownerId" VALUE="fedoraAdmin" />
+    <foxml:property NAME="info:fedora/fedora-system:def/model#createdDate" VALUE="2008-07-02T05:09:42.015Z" />
+    <foxml:property NAME="info:fedora/fedora-system:def/view#lastModifiedDate" VALUE="2009-07-29T16:27:12.397Z" />
+  </foxml:objectProperties>
+  <foxml:datastream ID="DC" STATE="A" CONTROL_GROUP="X" VERSIONABLE="true">
+    <foxml:datastreamVersion ID="DC1.0" LABEL="Dublin Core Record for this object" CREATED="2008-07-02T05:09:42.609Z" MIMETYPE="text/xml" FORMAT_URI="http://www.openarchives.org/OAI/2.0/oai_dc/" SIZE="419">
+      <foxml:xmlContent>
+        <oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+          <dc:title>Service Deployment Object for Basic Workflow</dc:title>
+          <dc:identifier>sdep:BasicWorkflowImpl</dc:identifier>
+        </oai_dc:dc>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream ID="RELS-EXT" STATE="A" CONTROL_GROUP="X" VERSIONABLE="true">
+    <foxml:datastreamVersion ID="RELS-EXT1.0" LABEL="RDF Statements about this object" CREATED="2008-07-02T05:09:42.609Z" MIMETYPE="application/rdf+xml" FORMAT_URI="info:fedora/fedora-system:FedoraRELSExt-1.0" SIZE="862">
+      <foxml:xmlContent>
+        <rdf:RDF xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="info:fedora/sdep:BasicWorkflowImpl">
+            <fedora-model:hasModel rdf:resource="info:fedora/fedora-system:ServiceDeployment-3.0"></fedora-model:hasModel>
+            <fedora-model:isDeploymentOf rdf:resource="info:fedora/sdef:WORKFLOW"></fedora-model:isDeploymentOf>
+            <fedora-model:isContractorOf rdf:resource="info:fedora/fedora-system:FedoraObject-3.0"></fedora-model:isContractorOf>
+          </rdf:Description>
+        </rdf:RDF>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream ID="METHODMAP" STATE="A" CONTROL_GROUP="X" VERSIONABLE="true">
+    <foxml:datastreamVersion ID="METHODMAP1.0" LABEL="Deployment Method Map" CREATED="2009-07-29T15:55:30.169Z" MIMETYPE="text/xml" FORMAT_URI="info:fedora/fedora-system:FedoraSDepMethodMap-1.1" SIZE="1303">
+      <foxml:xmlContent>
+        <fmm:MethodMap xmlns:fmm="http://fedora.comm.nsdlib.org/service/methodmap" name="MethodMap - Document Transform BDEF Methods">
+          <fmm:Method operationName="addDatastream" wsdlMsgName="addDatastreamRequest" wsdlMsgOutput="xslt_response">
+            <fmm:UserInputParm defaultValue="" parmName="dsID" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:UserInputParm defaultValue="addDatastream" parmName="action" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:DefaultInputParm defaultValue="yes" parmName="CLEAR_CACHE" passBy="VALUE" required="true"></fmm:DefaultInputParm>
+            <fmm:DatastreamInputParm parmName="RELS-EXT" passBy="URL_REF" required="true"></fmm:DatastreamInputParm>
+            <fmm:MethodReturnType wsdlMsgName="xslt_response" wsdlMsgTOMIME="text/html"></fmm:MethodReturnType>
+          </fmm:Method>
+          <fmm:Method operationName="addRelationship" wsdlMsgName="addRelationshipRequest" wsdlMsgOutput="xslt_response">
+            <fmm:UserInputParm defaultValue="" parmName="dsID" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:UserInputParm defaultValue="addRelationship" parmName="action" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:DefaultInputParm defaultValue="yes" parmName="CLEAR_CACHE" passBy="VALUE" required="true"></fmm:DefaultInputParm>
+            <fmm:DatastreamInputParm parmName="RELS-EXT" passBy="URL_REF" required="true"></fmm:DatastreamInputParm>
+            <fmm:MethodReturnType wsdlMsgName="xslt_response" wsdlMsgTOMIME="text/html"></fmm:MethodReturnType>
+          </fmm:Method>
+          <fmm:Method operationName="ingest" wsdlMsgName="ingestRequest" wsdlMsgOutput="xslt_response">
+            <fmm:UserInputParm defaultValue="" parmName="dsID" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:UserInputParm defaultValue="ingest" parmName="action" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:DefaultInputParm defaultValue="yes" parmName="CLEAR_CACHE" passBy="VALUE" required="true"></fmm:DefaultInputParm>
+            <fmm:DatastreamInputParm parmName="RELS-EXT" passBy="URL_REF" required="true"></fmm:DatastreamInputParm>
+            <fmm:MethodReturnType wsdlMsgName="xslt_response" wsdlMsgTOMIME="text/html"></fmm:MethodReturnType>
+          </fmm:Method>
+          <fmm:Method operationName="ingestObject" wsdlMsgName="ingestObjectRequest" wsdlMsgOutput="xslt_response">
+            <fmm:UserInputParm defaultValue="" parmName="dsID" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:UserInputParm defaultValue="ingestObject" parmName="action" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:DefaultInputParm defaultValue="yes" parmName="CLEAR_CACHE" passBy="VALUE" required="true"></fmm:DefaultInputParm>
+            <fmm:DatastreamInputParm parmName="RELS-EXT" passBy="URL_REF" required="true"></fmm:DatastreamInputParm>
+            <fmm:MethodReturnType wsdlMsgName="xslt_response" wsdlMsgTOMIME="text/html"></fmm:MethodReturnType>
+          </fmm:Method>
+          <fmm:Method operationName="modifyDatastreamByValue" wsdlMsgName="modifyDatastreamByValueRequest" wsdlMsgOutput="xslt_response">
+            <fmm:UserInputParm defaultValue="" parmName="dsID" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:UserInputParm defaultValue="modifyDatastreamByValue" parmName="action" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:DefaultInputParm defaultValue="yes" parmName="CLEAR_CACHE" passBy="VALUE" required="true"></fmm:DefaultInputParm>
+            <fmm:DatastreamInputParm parmName="RELS-EXT" passBy="URL_REF" required="true"></fmm:DatastreamInputParm>
+            <fmm:MethodReturnType wsdlMsgName="xslt_response" wsdlMsgTOMIME="text/html"></fmm:MethodReturnType>
+          </fmm:Method>
+          <fmm:Method operationName="modifyObject" wsdlMsgName="modifyObjectRequest" wsdlMsgOutput="xslt_response">
+            <fmm:UserInputParm defaultValue="" parmName="dsID" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:UserInputParm defaultValue="modifyObject" parmName="action" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:DefaultInputParm defaultValue="yes" parmName="CLEAR_CACHE" passBy="VALUE" required="true"></fmm:DefaultInputParm>
+            <fmm:DatastreamInputParm parmName="RELS-EXT" passBy="URL_REF" required="true"></fmm:DatastreamInputParm>
+            <fmm:MethodReturnType wsdlMsgName="xslt_response" wsdlMsgTOMIME="text/html"></fmm:MethodReturnType>
+          </fmm:Method>
+          <fmm:Method operationName="purgeDatastream" wsdlMsgName="purgeDatastreamRequest" wsdlMsgOutput="xslt_response">
+            <fmm:UserInputParm defaultValue="" parmName="dsID" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:UserInputParm defaultValue="purgeDatastream" parmName="action" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:DefaultInputParm defaultValue="yes" parmName="CLEAR_CACHE" passBy="VALUE" required="true"></fmm:DefaultInputParm>
+            <fmm:DatastreamInputParm parmName="RELS-EXT" passBy="URL_REF" required="true"></fmm:DatastreamInputParm>
+            <fmm:MethodReturnType wsdlMsgName="xslt_response" wsdlMsgTOMIME="text/html"></fmm:MethodReturnType>
+          </fmm:Method>
+          <fmm:Method operationName="purgeObject" wsdlMsgName="purgeObjectRequest" wsdlMsgOutput="xslt_response">
+            <fmm:UserInputParm defaultValue="" parmName="dsID" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:UserInputParm defaultValue="purgeObject" parmName="action" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:DefaultInputParm defaultValue="yes" parmName="CLEAR_CACHE" passBy="VALUE" required="true"></fmm:DefaultInputParm>
+            <fmm:DatastreamInputParm parmName="RELS-EXT" passBy="URL_REF" required="true"></fmm:DatastreamInputParm>
+            <fmm:MethodReturnType wsdlMsgName="xslt_response" wsdlMsgTOMIME="text/html"></fmm:MethodReturnType>
+          </fmm:Method>
+          <fmm:Method operationName="purgeRelationship" wsdlMsgName="purgeRelationshipRequest" wsdlMsgOutput="xslt_response">
+            <fmm:UserInputParm defaultValue="" parmName="dsID" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:UserInputParm defaultValue="purgeRelationship" parmName="action" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:DefaultInputParm defaultValue="yes" parmName="CLEAR_CACHE" passBy="VALUE" required="true"></fmm:DefaultInputParm>
+            <fmm:DatastreamInputParm parmName="RELS-EXT" passBy="URL_REF" required="true"></fmm:DatastreamInputParm>
+            <fmm:MethodReturnType wsdlMsgName="xslt_response" wsdlMsgTOMIME="text/html"></fmm:MethodReturnType>
+          </fmm:Method>
+          <fmm:Method operationName="setDatastreamState" wsdlMsgName="setDatastreamStateRequest" wsdlMsgOutput="xslt_response">
+            <fmm:UserInputParm defaultValue="" parmName="dsID" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:UserInputParm defaultValue="setDatastreamState" parmName="action" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:DefaultInputParm defaultValue="yes" parmName="CLEAR_CACHE" passBy="VALUE" required="true"></fmm:DefaultInputParm>
+            <fmm:DatastreamInputParm parmName="RELS-EXT" passBy="URL_REF" required="true"></fmm:DatastreamInputParm>
+            <fmm:MethodReturnType wsdlMsgName="xslt_response" wsdlMsgTOMIME="text/html"></fmm:MethodReturnType>
+          </fmm:Method>
+        </fmm:MethodMap>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream ID="DSINPUTSPEC" STATE="A" CONTROL_GROUP="X" VERSIONABLE="true">
+    <foxml:datastreamVersion ID="DSINPUTSPEC1.0" LABEL="Datastream Input Specification" CREATED="2008-07-02T05:09:42.609Z" MIMETYPE="text/xml" FORMAT_URI="info:fedora/fedora-system:FedoraDSInputSpec-1.1" SIZE="455">
+      <foxml:xmlContent>
+        <fbs:DSInputSpec xmlns:fbs="http://fedora.comm.nsdlib.org/service/bindspec" label="workflow inputs">
+          <fbs:DSInput DSMax="1" DSMin="1" DSOrdinality="false" wsdlMsgPartName="RELS-EXT">
+            <fbs:DSInputLabel>RELS-EXT file</fbs:DSInputLabel>
+            <fbs:DSMIME>text/xml</fbs:DSMIME>
+            <fbs:DSInputInstruction>RELS-EXT source file to be transformed</fbs:DSInputInstruction>
+          </fbs:DSInput>
+        </fbs:DSInputSpec>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream ID="_workflow.xsl" STATE="A" CONTROL_GROUP="X" VERSIONABLE="true">
+    <foxml:datastreamVersion ID="workflow.xsl1.0" LABEL="RELS-EXT to Workflow XSLT" CREATED="2009-11-10T05:09:42.609Z" MIMETYPE="text/xml" FORMAT_URI="info:fedora/fedora-system:FedoraDSInputSpec-1.1" SIZE="455">
+      <foxml:xmlContent>
+		<xsl:stylesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fedora-rels-ext="info:fedora/fedora-system:def/relations-external#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:fedora-model="info:fedora/fedora-system:def/model#" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+				 version="1.0">
+			<xsl:output method="xml" omit-xml-declaration="yes" />
+			<xsl:param name="action">default</xsl:param>
+			<xsl:template match="rdf:RDF">
+				<process-definition>
+					<xsl:apply-templates select="//fedora-rels-ext:hasWorkflow" />
+					<xsl:apply-templates select="//fedora-model:hasModel" />
+				</process-definition>
+			</xsl:template>
+			<xsl:template match="//fedora-model:hasModel">
+				<xsl:variable name="parent_pid" select="substring-after(@rdf:resource, '/')" />
+				<xsl:variable name="rels" select="document(concat('http://localhost:8080/fedora/get/', $parent_pid, '/RELS-EXT'))" />
+				<xsl:apply-templates select="$rels" mode="parent"/>
+			</xsl:template>
+			<xsl:template match="rdf:RDF" mode="parent">
+				<xsl:apply-templates select="//fedora-rels-ext:hasWorkflow" />
+			</xsl:template>
+			<xsl:template match="//fedora-rels-ext:hasWorkflow">
+				<xsl:variable name="pid" select="substring-after(@rdf:resource, '/')" />	
+				<xsl:variable name="wkflw" select="document(concat('http://localhost:8080/fedora/get/', $pid, '/Workflow'))" />
+				<xsl:apply-templates select="$wkflw/workflows/process-definition[@name=$action]"/>  
+				<xsl:apply-templates select="$wkflw/workflows/process-definition[@name='any']"/>  
+			</xsl:template>
+			<xsl:template match="//process-definition">
+				<xsl:copy-of select="*" />
+			</xsl:template>
+	  </xsl:stylesheet>  
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream ID="WSDL" STATE="A" CONTROL_GROUP="X" VERSIONABLE="true">
+    <foxml:datastreamVersion ID="WSDL1.0" LABEL="WSDL Bindings" CREATED="2009-07-29T15:56:09.974Z" MIMETYPE="text/xml" FORMAT_URI="http://schemas.xmlsoap.org/wsdl/" SIZE="3165">
+      <foxml:xmlContent>
+        <wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap" xmlns:soapenc="http://schemas.xmlsoap.org/wsdl/soap/encoding" xmlns:this="saxon" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Fedora Local Saxon Service" targetNamespace="saxon">
+          <wsdl:types>
+            <xsd:schema targetNamespace="saxon">
+              <xsd:simpleType name="URLType">
+                <xsd:restriction base="xsd:string"></xsd:restriction>
+              </xsd:simpleType>
+              <xsd:simpleType name="CLEAR_CACHEType">
+                <xsd:restriction base="xsd:string">
+                  <xsd:enumeration value="yes"></xsd:enumeration>
+                  <xsd:enumeration value="no"></xsd:enumeration>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:schema>
+          </wsdl:types>
+          <wsdl:message name="addDatastreamRequest">
+            <wsdl:part name="RELS-EXT" type="this:URLType"></wsdl:part>
+            <wsdl:part name="CLEAR_CACHE" type="this:CLEAR_CACHEType"></wsdl:part>
+          </wsdl:message>
+          <wsdl:message name="addRelationshipRequest">
+            <wsdl:part name="RELS-EXT" type="this:URLType"></wsdl:part>
+            <wsdl:part name="CLEAR_CACHE" type="this:CLEAR_CACHEType"></wsdl:part>
+          </wsdl:message>
+          <wsdl:message name="ingestRequest">
+            <wsdl:part name="RELS-EXT" type="this:URLType"></wsdl:part>
+            <wsdl:part name="CLEAR_CACHE" type="this:CLEAR_CACHEType"></wsdl:part>
+          </wsdl:message>
+          <wsdl:message name="ingestObjectRequest">
+            <wsdl:part name="RELS-EXT" type="this:URLType"></wsdl:part>
+            <wsdl:part name="CLEAR_CACHE" type="this:CLEAR_CACHEType"></wsdl:part>
+          </wsdl:message>
+          <wsdl:message name="modifyDatastreamByValueRequest">
+            <wsdl:part name="RELS-EXT" type="this:URLType"></wsdl:part>
+            <wsdl:part name="CLEAR_CACHE" type="this:CLEAR_CACHEType"></wsdl:part>
+          </wsdl:message>
+          <wsdl:message name="modifyObjectRequest">
+            <wsdl:part name="RELS-EXT" type="this:URLType"></wsdl:part>
+            <wsdl:part name="CLEAR_CACHE" type="this:CLEAR_CACHEType"></wsdl:part>
+          </wsdl:message>
+          <wsdl:message name="purgeDatastreamRequest">
+            <wsdl:part name="RELS-EXT" type="this:URLType"></wsdl:part>
+            <wsdl:part name="CLEAR_CACHE" type="this:CLEAR_CACHEType"></wsdl:part>
+          </wsdl:message>
+          <wsdl:message name="purgeObjectRequest">
+            <wsdl:part name="RELS-EXT" type="this:URLType"></wsdl:part>
+            <wsdl:part name="CLEAR_CACHE" type="this:CLEAR_CACHEType"></wsdl:part>
+          </wsdl:message>
+          <wsdl:message name="purgeRelationshipRequest">
+            <wsdl:part name="RELS-EXT" type="this:URLType"></wsdl:part>
+            <wsdl:part name="CLEAR_CACHE" type="this:CLEAR_CACHEType"></wsdl:part>
+          </wsdl:message>
+          <wsdl:message name="setDatastreamStateRequest">
+            <wsdl:part name="RELS-EXT" type="this:URLType"></wsdl:part>
+            <wsdl:part name="CLEAR_CACHE" type="this:CLEAR_CACHEType"></wsdl:part>
+          </wsdl:message>
+          <wsdl:message name="xslt_response">
+            <wsdl:part name="exhibit" type="xsd:base64Binary"></wsdl:part>
+          </wsdl:message>
+          <wsdl:portType name="FedoraSaxonPortType">
+            <wsdl:operation name="addDatastream">
+              <wsdl:input message="this:addDatastreamRequest"></wsdl:input>
+              <wsdl:output message="this:xslt_response"></wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="addRelationship">
+              <wsdl:input message="this:addRelationshipRequest"></wsdl:input>
+              <wsdl:output message="this:xslt_response"></wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="ingest">
+              <wsdl:input message="this:ingestRequest"></wsdl:input>
+              <wsdl:output message="this:xslt_response"></wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="ingestObject">
+              <wsdl:input message="this:ingestObjectRequest"></wsdl:input>
+              <wsdl:output message="this:xslt_response"></wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="modifyDatastreamByValue">
+              <wsdl:input message="this:modifyDatastreamByValueRequest"></wsdl:input>
+              <wsdl:output message="this:xslt_response"></wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="modifyObject">
+              <wsdl:input message="this:modifyObjectRequest"></wsdl:input>
+              <wsdl:output message="this:xslt_response"></wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="purgeDatastream">
+              <wsdl:input message="this:purgeDatastreamRequest"></wsdl:input>
+              <wsdl:output message="this:xslt_response"></wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="purgeObject">
+              <wsdl:input message="this:purgeObjectRequest"></wsdl:input>
+              <wsdl:output message="this:xslt_response"></wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="purgeRelationship">
+              <wsdl:input message="this:purgeRelationshipRequest"></wsdl:input>
+              <wsdl:output message="this:xslt_response"></wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="setDatastreamState">
+              <wsdl:input message="this:setDatastreamStateRequest"></wsdl:input>
+              <wsdl:output message="this:xslt_response"></wsdl:output>
+            </wsdl:operation>
+          </wsdl:portType>
+          <wsdl:service name="FedoraSaxon">
+            <wsdl:port binding="this:FedoraSaxon_http" name="FedoraSaxon_port">
+              <http:address location="http://local.fedora.server/saxon/"></http:address>
+            </wsdl:port>
+          </wsdl:service>
+          <wsdl:binding name="FedoraSaxon_http" type="this:FedoraSaxonPortType">
+            <http:binding verb="GET"></http:binding>
+            <wsdl:operation name="addDatastream">
+              <http:operation location="SaxonServlet?source=(RELS-EXT)&amp;style=http://local.fedora.server/fedora/get/sdep:BasicWorkflowImpl/_workflow.xsl&amp;clear-stylesheet-cache=(CLEAR_CACHE)&amp;dsID=(dsID)&amp;action=(action)"></http:operation>
+              <wsdl:input>
+                <http:urlReplacement></http:urlReplacement>
+              </wsdl:input>
+              <wsdl:output>
+                <mime:content type="text/xml"></mime:content>
+              </wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="addRelationship">
+              <http:operation location="SaxonServlet?source=(RELS-EXT)&amp;style=http://local.fedora.server/fedora/get/sdep:BasicWorkflowImpl/_workflow.xsl&amp;clear-stylesheet-cache=(CLEAR_CACHE)&amp;dsID=(dsID)&amp;action=(action)"></http:operation>
+              <wsdl:input>
+                <http:urlReplacement></http:urlReplacement>
+              </wsdl:input>
+              <wsdl:output>
+                <mime:content type="text/xml"></mime:content>
+              </wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="ingest">
+              <http:operation location="SaxonServlet?source=(RELS-EXT)&amp;style=http://local.fedora.server/fedora/get/sdep:BasicWorkflowImpl/_workflow.xsl&amp;clear-stylesheet-cache=(CLEAR_CACHE)&amp;dsID=(dsID)&amp;action=(action)"></http:operation>
+              <wsdl:input>
+                <http:urlReplacement></http:urlReplacement>
+              </wsdl:input>
+              <wsdl:output>
+                <mime:content type="text/xml"></mime:content>
+              </wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="ingestObject">
+              <http:operation location="SaxonServlet?source=(RELS-EXT)&amp;style=http://local.fedora.server/fedora/get/sdep:BasicWorkflowImpl/_workflow.xsl&amp;clear-stylesheet-cache=(CLEAR_CACHE)&amp;dsID=(dsID)&amp;action=(action)"></http:operation>
+              <wsdl:input>
+                <http:urlReplacement></http:urlReplacement>
+              </wsdl:input>
+              <wsdl:output>
+                <mime:content type="text/xml"></mime:content>
+              </wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="modifyDatastreamByValue">
+              <http:operation location="SaxonServlet?source=(RELS-EXT)&amp;style=http://local.fedora.server/fedora/get/sdep:BasicWorkflowImpl/_workflow.xsl&amp;clear-stylesheet-cache=(CLEAR_CACHE)&amp;dsID=(dsID)&amp;action=(action)"></http:operation>
+              <wsdl:input>
+                <http:urlReplacement></http:urlReplacement>
+              </wsdl:input>
+              <wsdl:output>
+                <mime:content type="text/xml"></mime:content>
+              </wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="modifyObject">
+              <http:operation location="SaxonServlet?source=(RELS-EXT)&amp;style=http://local.fedora.server/fedora/get/sdep:BasicWorkflowImpl/_workflow.xsl&amp;clear-stylesheet-cache=(CLEAR_CACHE)&amp;dsID=(dsID)&amp;action=(action)"></http:operation>
+              <wsdl:input>
+                <http:urlReplacement></http:urlReplacement>
+              </wsdl:input>
+              <wsdl:output>
+                <mime:content type="text/xml"></mime:content>
+              </wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="purgeDatastream">
+              <http:operation location="SaxonServlet?source=(RELS-EXT)&amp;style=http://local.fedora.server/fedora/get/sdep:BasicWorkflowImpl/_workflow.xsl&amp;clear-stylesheet-cache=(CLEAR_CACHE)&amp;dsID=(dsID)&amp;action=(action)"></http:operation>
+              <wsdl:input>
+                <http:urlReplacement></http:urlReplacement>
+              </wsdl:input>
+              <wsdl:output>
+                <mime:content type="text/xml"></mime:content>
+              </wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="purgeObject">
+              <http:operation location="SaxonServlet?source=(RELS-EXT)&amp;style=http://local.fedora.server/fedora/get/sdep:BasicWorkflowImpl/_workflow.xsl&amp;clear-stylesheet-cache=(CLEAR_CACHE)&amp;dsID=(dsID)&amp;action=(action)"></http:operation>
+              <wsdl:input>
+                <http:urlReplacement></http:urlReplacement>
+              </wsdl:input>
+              <wsdl:output>
+                <mime:content type="text/xml"></mime:content>
+              </wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="purgeRelationship">
+              <http:operation location="SaxonServlet?source=(RELS-EXT)&amp;style=http://local.fedora.server/fedora/get/sdep:BasicWorkflowImpl/_workflow.xsl&amp;clear-stylesheet-cache=(CLEAR_CACHE)&amp;dsID=(dsID)&amp;action=(action)"></http:operation>
+              <wsdl:input>
+                <http:urlReplacement></http:urlReplacement>
+              </wsdl:input>
+              <wsdl:output>
+                <mime:content type="text/xml"></mime:content>
+              </wsdl:output>
+            </wsdl:operation>
+            <wsdl:operation name="setDatastreamState">
+              <http:operation location="SaxonServlet?source=(RELS-EXT)&amp;style=http://local.fedora.server/fedora/get/sdep:BasicWorkflowImpl/_workflow.xsl&amp;clear-stylesheet-cache=(CLEAR_CACHE)&amp;dsID=(dsID)&amp;action=(action)"></http:operation>
+              <wsdl:input>
+                <http:urlReplacement></http:urlReplacement>
+              </wsdl:input>
+              <wsdl:output>
+                <mime:content type="text/xml"></mime:content>
+              </wsdl:output>
+            </wsdl:operation>
+          </wsdl:binding>
+        </wsdl:definitions>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+</foxml:digitalObject>

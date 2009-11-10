@@ -34,33 +34,43 @@
         <fmm:MethodMap xmlns:fmm="http://fedora.comm.nsdlib.org/service/methodmap" name="Fedora MethodMap for Workflow">
           <fmm:Method operationName="addDatastream">
             <fmm:UserInputParm defaultValue="" parmName="dsID" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:UserInputParm defaultValue="addDatastream" parmName="action" passBy="VALUE" required="false"></fmm:UserInputParm>
           </fmm:Method>
           <fmm:Method operationName="addRelationship">
             <fmm:UserInputParm defaultValue="" parmName="dsID" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:UserInputParm defaultValue="addRelationship" parmName="action" passBy="VALUE" required="false"></fmm:UserInputParm>
           </fmm:Method>
           <fmm:Method operationName="ingest">
             <fmm:UserInputParm defaultValue="" parmName="dsID" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:UserInputParm defaultValue="ingest" parmName="action" passBy="VALUE" required="false"></fmm:UserInputParm>
           </fmm:Method>
           <fmm:Method operationName="ingestObject">
             <fmm:UserInputParm defaultValue="" parmName="dsID" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:UserInputParm defaultValue="ingestObject" parmName="action" passBy="VALUE" required="false"></fmm:UserInputParm>
           </fmm:Method>
           <fmm:Method operationName="modifyDatastreamByValue">
             <fmm:UserInputParm defaultValue="" parmName="dsID" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:UserInputParm defaultValue="modifyDatastreamByValue" parmName="action" passBy="VALUE" required="false"></fmm:UserInputParm>
           </fmm:Method>
           <fmm:Method operationName="modifyObject">
             <fmm:UserInputParm defaultValue="" parmName="dsID" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:UserInputParm defaultValue="modifyObject" parmName="action" passBy="VALUE" required="false"></fmm:UserInputParm>
           </fmm:Method>
           <fmm:Method operationName="purgeDatastream">
             <fmm:UserInputParm defaultValue="" parmName="dsID" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:UserInputParm defaultValue="purgeDatastream" parmName="action" passBy="VALUE" required="false"></fmm:UserInputParm>
           </fmm:Method>
           <fmm:Method operationName="purgeObject">
             <fmm:UserInputParm defaultValue="" parmName="dsID" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:UserInputParm defaultValue="purgeObject" parmName="action" passBy="VALUE" required="false"></fmm:UserInputParm>
           </fmm:Method>
           <fmm:Method operationName="purgeRelationship">
             <fmm:UserInputParm defaultValue="" parmName="dsID" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:UserInputParm defaultValue="purgeRelationship" parmName="action" passBy="VALUE" required="false"></fmm:UserInputParm>
           </fmm:Method>
           <fmm:Method operationName="setDatastreamState">
             <fmm:UserInputParm defaultValue="" parmName="dsID" passBy="VALUE" required="false"></fmm:UserInputParm>
+            <fmm:UserInputParm defaultValue="setDatastreamState" parmName="action" passBy="VALUE" required="false"></fmm:UserInputParm>
           </fmm:Method>
         </fmm:MethodMap>
       </foxml:xmlContent>
