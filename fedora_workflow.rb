@@ -79,7 +79,8 @@ client = Stomp::Client.open activemq_endpoint
 
 client.subscribe(activemq_topic) do |msg|
   begin
-    FedoraMessage.new(msg)
+    m = FedoraMessage.new msg
+    m.handle_msg
   rescue Exception => e
     #log
     puts e
