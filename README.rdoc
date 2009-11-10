@@ -1,0 +1,19 @@
+
+= fedora-workflow
+
+Fedora-workflow is a Ruote-based workflow dispatching engine. It listens to the ActiveMQ message queue for events and dispatches and persists the workflow processes.
+
+== usage
+
+See fedora_workflow.rb
+
+To complete the installation, please add all the necessary dependencies listed in fedora_workflow.rb
+
+== license
+
+MIT
+
+== links
+
+http://ruote.rubyforge.org
+http://authoritativeopinion.com/blog/2009/08/02/repository-workflows/ (blog)
