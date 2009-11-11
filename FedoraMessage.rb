@@ -15,7 +15,7 @@ class FedoraMessage
   def handle_msg
     #puts @msgdsID
     return if @type == 'ingest' or @type == 'purgeObject'	 
-    begin
+#    begin
       d = get_definition 
       launch_workflow d
 
@@ -33,9 +33,9 @@ class FedoraMessage
  #       end
  #     }
       #select $a from <#ri> where $a  <info:fedora/fedora-system:def/relations-external#hasWorkflow> $b
-    rescue
+#    rescue
       #log
-    end
+#    end
     
     if self.respond_to? @type
       self.send @type 
@@ -71,18 +71,23 @@ URI.encode(v.to_s)] }.join('&')
     profile_src = uri.read
     profile = REXML::Document.new profile_src
 
-    li = OpenWFE::LaunchItem.new definition
     
-    li.repository_uri = @repository_uri
-    li.pid = @pid
-    li.type = @type
-    li.msg = @msg
-    li.dsID = @dsID
-    li.state = REXML::XPath.first( profile, '//objState').text 
-
+    
+    fields = {
+		:repository_uri => @repository_uri,
+		:pid => @pid,
+		:type => @type,
+		:msg => @msg,
+		:dsID => @dsID,
+		:state => REXML::XPath.first( profile, '//objState').text
+	}
+	
     params.each do |k,v|
-      li[k] = v
+      fields[k] = v
     end
+    
+    li = Ruote::Launchitem.new definition, fields
+    
     fei = $engine.launch li
   end
    

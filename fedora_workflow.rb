@@ -31,10 +31,11 @@ require 'rexml/document'
 require 'rest_client'
 require 'stomp' 
 require 'ruote/engine'
-require 'ruote/participants'
+require 'ruote/part/fs_participant'
+require 'ruote/part/block_participant'
+require 'ruote/part/smtp_participant'
 require 'tempfile'
 require 'set'
-require 'http_require'
 
 
 gem 'soap4r'
@@ -64,15 +65,18 @@ Dir.glob(File.join(File.dirname(__FILE__), 'participants/*.rb')).each {|f| requi
 
 
 # -- Remote Participants
-query = 'select $a from <#ri> where
-$b <info:fedora/fedora-system:def/relations-external#hasWorkflow> $a and
-$a <info:fedora/fedora-system:def/model#state> <info:fedora/fedora-system:def/model#Active>'
-
-relsext = RestClient.post "http://localhost:8080/fedora/risearch", :dt => 'on', :format => 'CSV', :lang => 'itql', :limit => 100, :query => query, :type => 'tuples'
-relsext.split(/\n/).shift
-relsext.each { |pid|
-	require fedora_base_url + '/get/' + pid  + "/Participants"
-}
+if false
+require 'http_require'
+	query = 'select $a from <#ri> where
+	$b <info:fedora/fedora-system:def/relations-external#hasWorkflow> $a and
+	$a <info:fedora/fedora-system:def/model#state> <info:fedora/fedora-system:def/model#Active>'
+	
+	relsext = RestClient.post "http://localhost:8080/fedora/risearch", :dt => 'on', :format => 'CSV', :lang => 'itql', :limit => 100, :query => query, :type => 'tuples'
+	relsext.split(/\n/).shift
+	relsext.each { |pid|
+		require fedora_base_url + '/get/' + pid  + "/Participants"
+	}
+end
 
 #Message queue
 client = Stomp::Client.open activemq_endpoint
@@ -87,5 +91,7 @@ client.subscribe(activemq_topic) do |msg|
    # puts e.backtrace
   end
 end
+
+p "fedora-workflow initialized"
 
 client.join

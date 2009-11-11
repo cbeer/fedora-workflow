@@ -1,1 +1,1 @@
-$engine.register_participant('file', OpenWFE::FileParticipant)
+$engine.register_participant('file', Ruote::FsParticipant)
