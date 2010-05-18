@@ -1,9 +1,9 @@
-require 'fedora/FedoraAPIM.rb'
-require 'fedora/FedoraAPIMMappingRegistry.rb'
+require File.join(File.dirname(__FILE__), 'Fedora-API-M-WSDL')
+require File.join(File.dirname(__FILE__), 'Fedora-API-M-WSDLMappingRegistry')
 require 'soap/rpc/driver'
 
 class FedoraAPIM < ::SOAP::RPC::Driver
-  DefaultEndpointUrl = "http://localhost:8080/fedora/services/management"
+  DefaultEndpointUrl = "http://10.0.1.7:8080/fedora/services/management"
 
   Methods = [
     [ "http://www.fedora.info/definitions/1/0/api/#ingest",
@@ -163,8 +163,8 @@ class FedoraAPIM < ::SOAP::RPC::Driver
   def initialize(endpoint_url = nil)
     endpoint_url ||= DefaultEndpointUrl
     super(endpoint_url, nil)
-    self.mapping_registry = DefaultMappingRegistry::EncodedRegistry
-    self.literal_mapping_registry = DefaultMappingRegistry::LiteralRegistry
+    self.mapping_registry = FedoraAPIMWSDLMappingRegistry::EncodedRegistry
+    self.literal_mapping_registry = FedoraAPIMWSDLMappingRegistry::LiteralRegistry
     init_methods
   end
 

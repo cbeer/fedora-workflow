@@ -6,8 +6,9 @@ xsi:schemaLocation="info:fedora/fedora-system:def/foxml# http://www.fedora.info/
 <foxml:objectProperties>
 <foxml:property NAME="info:fedora/fedora-system:def/model#state" VALUE="Active"/>
 <foxml:property NAME="info:fedora/fedora-system:def/model#label" VALUE="solr workflow"/>
+<foxml:property NAME="info:fedora/fedora-system:def/model#ownerId" VALUE=""/>
 <foxml:property NAME="info:fedora/fedora-system:def/model#createdDate" VALUE="2009-11-10T18:10:04.759Z"/>
-<foxml:property NAME="info:fedora/fedora-system:def/view#lastModifiedDate" VALUE="2009-11-10T18:35:42.068Z"/>
+<foxml:property NAME="info:fedora/fedora-system:def/view#lastModifiedDate" VALUE="2010-05-18T23:21:30.207Z"/>
 </foxml:objectProperties>
 <foxml:datastream ID="DC" STATE="A" CONTROL_GROUP="X" VERSIONABLE="true">
 <foxml:datastreamVersion ID="DC1.0" LABEL="Dublin Core Record for this object" CREATED="2009-11-10T18:10:04.759Z" MIMETYPE="text/xml" FORMAT_URI="http://www.openarchives.org/OAI/2.0/oai_dc/" SIZE="379">
@@ -20,17 +21,14 @@ xsi:schemaLocation="info:fedora/fedora-system:def/foxml# http://www.fedora.info/
 </foxml:datastreamVersion>
 </foxml:datastream>
 <foxml:datastream ID="Workflow" STATE="A" CONTROL_GROUP="X" VERSIONABLE="true">
-<foxml:datastreamVersion ID="Workflow.0" LABEL="" CREATED="2009-11-10T18:35:42.068Z" MIMETYPE="text/xml" SIZE="271">
+<foxml:datastreamVersion ID="Workflow.0" LABEL="" CREATED="2009-11-10T18:11:20.143Z" MIMETYPE="text/xml" SIZE="220">
 <foxml:xmlContent>
-<workflows>
-  <process-definition name="any">
-    <sequence>
-      <participant ref="solr_prepare"></participant>
-      <participant ref="solr_update"></participant>
-      <participant ref="solr_purge"></participant>
-    </sequence>
-  </process-definition>
-</workflows>
+<process-definition name="addToSolr" action="modifyObject">
+		<sequence>
+			<participant ref="fedora_object_to_solr"></participant>
+			<participant ref="solr_update"></participant>
+		</sequence>		
+</process-definition>
 </foxml:xmlContent>
 </foxml:datastreamVersion>
 </foxml:datastream>

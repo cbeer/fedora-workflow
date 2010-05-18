@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'fedora/FedoraAPIMDriver.rb'
+require 'Fedora-API-M-WSDLDriver.rb'
 
 endpoint_url = ARGV.shift
 obj = FedoraAPIM.new(endpoint_url)
