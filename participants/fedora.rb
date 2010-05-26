@@ -14,8 +14,8 @@ $engine.register_participant :fedora_add_datastream do |workitem|
   pid = workitem.fields['pid']
   dsid = workitem.fields['dsid']
   label = workitem.fields['label'] || workitem.fields['dsid']
-  client = FedoraWorkflow.fedora_resoruce pid + "/datastreams/" + dsid + "?controlGroup=M&dsLabel=" + CGI::escape(label) + "&checksumType=DISABLED"
-  client.post data, mime
+  client = FedoraWorkflow.fedora_resource pid + "/datastreams/" + dsid + "?controlGroup=M&dsLabel=" + CGI::escape(label) + "&checksumType=DISABLED"
+  client.post data, :content_type => mime
 end
 
 $engine.register_participant :fedora_purge_datastream do |workitem|
