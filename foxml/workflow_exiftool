@@ -8,24 +8,8 @@ xsi:schemaLocation="info:fedora/fedora-system:def/foxml# http://www.fedora.info/
 <foxml:property NAME="info:fedora/fedora-system:def/model#label" VALUE=""/>
 <foxml:property NAME="info:fedora/fedora-system:def/model#ownerId" VALUE=""/>
 <foxml:property NAME="info:fedora/fedora-system:def/model#createdDate" VALUE="2010-05-26T14:38:40.201Z"/>
-<foxml:property NAME="info:fedora/fedora-system:def/view#lastModifiedDate" VALUE="2010-05-26T14:39:54.620Z"/>
+<foxml:property NAME="info:fedora/fedora-system:def/view#lastModifiedDate" VALUE="2010-05-26T16:04:19.407Z"/>
 </foxml:objectProperties>
-<foxml:datastream ID="AUDIT" STATE="A" CONTROL_GROUP="X" VERSIONABLE="false">
-<foxml:datastreamVersion ID="AUDIT.0" LABEL="Audit Trail for this object" CREATED="2010-05-26T14:38:40.201Z" MIMETYPE="text/xml" FORMAT_URI="info:fedora/fedora-system:format/xml.fedora.audit">
-<foxml:xmlContent>
-<audit:auditTrail xmlns:audit="info:fedora/fedora-system:def/audit#">
-<audit:record ID="AUDREC1">
-<audit:process type="Fedora API-M"/>
-<audit:action>addDatastream</audit:action>
-<audit:componentID>Workflow</audit:componentID>
-<audit:responsibility>fedoraAdmin</audit:responsibility>
-<audit:date>2010-05-26T14:39:54.620Z</audit:date>
-<audit:justification></audit:justification>
-</audit:record>
-</audit:auditTrail>
-</foxml:xmlContent>
-</foxml:datastreamVersion>
-</foxml:datastream>
 <foxml:datastream ID="DC" STATE="A" CONTROL_GROUP="X" VERSIONABLE="true">
 <foxml:datastreamVersion ID="DC1.0" LABEL="Dublin Core Record for this object" CREATED="2010-05-26T14:38:40.201Z" MIMETYPE="text/xml" FORMAT_URI="http://www.openarchives.org/OAI/2.0/oai_dc/" SIZE="346">
 <foxml:xmlContent>
@@ -36,13 +20,23 @@ xsi:schemaLocation="info:fedora/fedora-system:def/foxml# http://www.fedora.info/
 </foxml:datastreamVersion>
 </foxml:datastream>
 <foxml:datastream ID="Workflow" STATE="A" CONTROL_GROUP="X" VERSIONABLE="true">
-<foxml:datastreamVersion ID="Workflow.0" LABEL="" CREATED="2010-05-26T14:39:54.620Z" MIMETYPE="text/xml">
+<foxml:datastreamVersion ID="Workflow.0" LABEL="" CREATED="2010-05-26T14:39:54.620Z" MIMETYPE="text/xml" SIZE="278">
 <foxml:xmlContent>
 <workflows>
   <process-definition action="modifyDatastreamByReference" name="addExifMetadataDS">
     <sequence>
-      <participant ref="extract_datastream_metadata"/>
+      <participant ref="should_do_metadata_extraction"/>
       <participant ref="log"/>
+      <if>
+        <equals field_value="__result__" other_value="true"/>
+        <sequence>
+          <participant ref="extract_datastream_metadata"/>
+          <set field="dsid_orig" value="${f:dsid}"/>
+          <set field="dsid" value="__${f:dsid}_exiftool"/>
+          <participant ref="fedora_add_datastream"/>
+          <set field="dsid" value="${f:dsid_orig}"/>
+        </sequence>
+      </if>
     </sequence>
   </process-definition>
 </workflows>
