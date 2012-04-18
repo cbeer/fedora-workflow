@@ -8,9 +8,9 @@ end
 $engine.register_participant :fedora_add_datastream do |workitem|
   data = File.read(workitem.fields['file']) unless workitem.fields['file'].nil?
   mime = MIME::Types.type_for(workitem.fields['file']).first.to_s unless workitem.fields['file'].nil?
-  data ||= workitem.fields['__result__'] 
+  data ||= workitem.fields['__result__']
   mime ||= 'text/xml'
-  
+
   pid = workitem.fields['pid']
   dsid = workitem.fields['dsid']
   label = workitem.fields['label'] || workitem.fields['dsid']
